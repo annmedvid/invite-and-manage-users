@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Open Sans L';
-  src: url('/assets/fonts/open-sans-light.ttf') format('truetype');
+  src: url('../assets/fonts/open-sans-light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Open Sans R';
-  src: url('/assets/fonts/open-sans-regular.ttf') format('truetype');
+  src: url('../assets/fonts/open-sans-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -73,7 +73,7 @@ ul {
 	position: absolute;
 	width: 60px;
 	height: 60px;
-	background-image: url('/assets/images/logo.png');
+	background-image: url('../assets/images/logo.png');
 	background-size: cover;
 }
 
