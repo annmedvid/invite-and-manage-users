@@ -46,6 +46,10 @@ module.exports = function(environment) {
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/invite-and-manage-users/';
+
+    ENV['ember-cli-mirage'] = {
+      enabled: true
+    }
     // here you can enable a production-specific feature
   }
 
