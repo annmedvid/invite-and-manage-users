@@ -1,0 +1,389 @@
+@font-face {
+  font-family: 'Open Sans L';
+  src: url('/assets/fonts/open-sans-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans R';
+  src: url('/assets/fonts/open-sans-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	--back-fone: #f5f5f5;
+	--text-color: #5f5f5f;
+	--border-color: #aaaaaa;
+	--green-text: #00efb0;
+	--blue: #dffcff;
+	--yellow: #fff7b6;
+	--pink: #ffe2eb;
+  --green: #e2ffe3;
+  --violet: #ffe2ff;
+}
+
+html, body {
+  height: 100%;
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+.ember-application > .ember-view {
+	height: 100%;
+	display: flex;
+	flex-flow: column;
+	justify-content: flex-start;
+	align-items: stretch;
+	font-family: 'Open Sans L', Arial, Helvetica, sans-serif;
+	background-color: var(--back-fone);
+  color: var(--text-color);
+}
+
+.app-header {
+	height: 80px;
+	padding: 10px 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: white;
+	position: relative;
+}
+
+.app-title {
+	margin-left: 70px;
+	text-transform: capitalize;
+}
+
+.app-header:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-image: url('/assets/images/logo.png');
+	background-size: cover;
+}
+
+.app-header > img {
+	width: 50px;
+	height: 50px;
+}
+
+.app-navigation {
+	display: flex;
+	align-items: center;
+}
+
+.app-navigation > a {
+	height: auto;
+	margin: 10px;
+	font-size: 20px;
+	text-transform: uppercase;
+	color: var(--text-color);
+	background-color: white;
+}
+
+.app-navigation > a:hover {
+	color: var(--green-text);
+}
+
+.app-content {
+	min-width: 800px;
+	margin-top: 30px;
+	padding: 30px;
+	align-self: center;
+	background-color: white; 
+}
+
+/*header for all pages*/
+
+.content-header {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 30px;
+	border-bottom: 2px solid var(--back-fone);
+}
+
+.content-header > h2 {
+	font-size: 20px;
+	font-weight: 100;
+	text-transform: capitalize;
+}
+
+.content-header > h2 > span {
+	margin-left: 5px;
+	font-size: 14px;
+}
+
+.content-header > button {
+	border: none;
+}
+
+.content-header > button > a {
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: capitalize;
+	color: var(--text-color);
+}
+
+.content-header > button > a:hover {
+	color: var(--green-text);
+}
+
+/*users*/
+
+.content-table {
+	border-collapse: collapse;
+}
+
+.content-table th, .content-table td {
+	padding: 10px;
+}
+
+.content-table th {
+	text-align: left;
+	text-transform: capitalize;
+	font-family: 'Open Sans R';
+	font-weight: 900;
+}
+
+.content-table td {
+	vertical-align: text-top;
+}
+
+.content-table .name {
+	min-height: 65px;
+	width: 200px;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column;
+	text-transform: capitalize;
+}
+
+.content-table .name.name-team {
+	height: 95px;
+	width: 420px;
+}
+
+.content-table .name a {
+	margin-bottom: 5px;
+	color: var(--text-color);
+}
+
+.content-table .name > .email,
+.content-table .name > .description,
+.content-table .name > .users {
+	padding: 5px 0;
+	font-size: 14px;
+}
+
+.content-table .name > .email {
+	text-transform: none;
+}
+
+.content-table input {
+	padding-left: 5px;
+	border-radius: 4px;
+	border: 1px solid var(--border-color);
+}
+
+.content-table .name input:first-of-type {
+	margin-bottom: 5px;
+}
+
+.content-table .created {
+	width: 200px;
+	font-size: 13px;
+}
+
+.content-table .enabled {
+	width: 120px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.content-table .role {
+	width: 150px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.content-table .color {
+	width: 100px;
+}
+
+.content-table .buttons {
+	width: 100px;
+}
+
+.content-table .buttons button {
+	height: 20px;
+	width: 35px;
+	padding: 0;
+	border: none;
+	font-size: 16px;
+	line-height: 16px;
+	text-transform: capitalize;
+	background-color: initial;
+	color: var(--green-text);
+}
+
+.content-table .buttons .delete {
+	text-transform: none;
+	color: var(--text-color);
+}
+
+.content-table .buttons button:hover {
+	font-weight: 900;
+	cursor: pointer;
+}
+
+.content-table td div {
+	min-height: 15px;
+	height: 15px;
+	padding: 0;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+.content-table tr.blue {
+	background-color: var(--blue); 
+}
+
+.content-table tr.yellow {
+	background-color: var(--yellow); 
+}
+
+.content-table tr.pink {
+	background-color: var(--pink); 
+}
+
+.content-table tr.green {
+	background-color: var(--green); 
+}
+
+.content-table tr.violet {
+	background-color: var(--violet); 
+}
+
+/*new*/
+
+.content-form {
+	width: 800px;
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.content-form label {
+
+	margin-top: 25px;
+}
+
+.content-form label:after {
+	content: ':';
+}
+
+.content-form > input, .content-form > div {
+	height: 45px;
+	margin-top: 10px;
+	padding-left: 5px;
+	flex: 1 0 775px;
+	line-height: 45px;
+	font-size: 14px;
+	border: 1px solid var(--border-color);
+	border-radius: 5px;
+}
+
+.content-form input {
+	flex-basis: 100%;
+	box-sizing: border-box;
+}
+
+.content-form button {
+	height: 40px;
+	width: 100px;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+.content-form button:hover {
+	cursor: pointer;
+	color: var(--green-text);
+	border-color: var(--green-text);
+}
+
+.content-form button:first-of-type {
+	margin-left: auto;
+	margin-right: 5px;
+}
+
+/*teams/team*/
+
+.app-content > .users {
+	display: flex;
+	justify-content: space-around;
+}
+
+.content-users {
+	padding: 10px;
+	font-size: 16px;
+}
+
+.content-users h3 {
+	text-align: center;
+}
+
+.content-users h3:after {
+	content: ':';
+}
+
+.content-users li {
+	margin: 10px 0;
+	display: flex;
+}
+
+.content-users li button {
+	height: 30px;
+	width: 50px;
+	margin-right: 10px;
+	font-size: 20px;
+}
+
+.content-users li p {
+	line-height: 30px;
+	min-width: 150px;
+}
+
+.content-users li p span {
+	font-size: 12px;
+}
+
+.content-users li button:hover {
+	cursor: pointer;
+	color: var(--green-text);
+	border-color: var(--green-text);
+}
+
+/*others*/
+
+.ember-power-select-options {
+	font-family: 'Open Sans L', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.ember-power-select-option {
+	height: 20px;
+}
