@@ -1,0 +1,35 @@
+{{log items}}
+{{#if isUsers}}
+	<tr>
+		<th>user</th>
+		<th>created</th>
+		<th>enabled</th>
+		<th>role</th>
+		<th></th>
+	</tr>
+	{{#each items as |item|}}
+		{{table-user
+			item=item
+			teams=teams
+			class=(get-color item teams)
+			editUser=(action 'editUser')
+			deleteUser=(action 'deleteUser')
+		}}
+	{{/each}}
+{{else}}
+	<tr>
+		<th>team</th>
+		<th>enabled</th>
+		<th></th>
+		<th></th>
+	</tr>
+	{{#each items as |item|}}
+		{{table-team
+			item=item
+			users=users
+			class=item.color
+			editTeam=(action 'editTeam')
+			deleteTeam=(action 'deleteTeam')
+		}} 
+	{{/each}}
+{{/if}}

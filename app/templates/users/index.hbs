@@ -1,0 +1,14 @@
+{{list-header
+	title='users'
+	to='users.new'
+	text='invite user'
+	items=model.users
+}}
+
+{{list-table
+	items=model.users
+	teams=model.teams
+	isUsers=true
+	editUser=(action 'editUser')
+	deleteUser=(action 'deleteUser')
+}}

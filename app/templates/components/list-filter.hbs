@@ -1,0 +1,14 @@
+<h3>{{title}}</h3>
+{{#each users as |user|}}
+	<li>
+		{{#if isIn}}
+			<button {{action 'removeUserFromTeam' user}}>-</button>
+		{{else}}
+			<button {{action 'addUserToTeam' user}}>+</button>
+		{{/if}}
+		<p>
+			{{user.name}}
+			<span>({{user.email}})</span>
+		</p>
+	</li>
+{{/each}}

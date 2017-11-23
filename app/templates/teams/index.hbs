@@ -1,0 +1,14 @@
+{{list-header
+	title='teams'
+	to='teams.new'
+	text='create new team'
+	items=model.teams
+}}
+
+{{list-table
+	items=model.teams
+	users=model.users
+	isUsers=false
+	editTeam=(action 'editTeam')
+	deleteTeam=(action 'deleteTeam')
+}}

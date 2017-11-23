@@ -1,0 +1,24 @@
+{{list-header
+	title='invite new user'
+	to='users'
+	text='x'
+}}
+
+<form class='content-form'>
+	<label>Email</label>
+	{{input
+		type='email'
+		value=user.email
+		placeholder='user@example.com'
+	}}
+	<label>Role</label>
+	{{#power-select
+  	options=options
+  	selected=user.role
+  	onchange=(action 'updateRole')
+  	as |option|}}
+  		{{option}}
+	{{/power-select}}
+	<button {{action 'onCancel'}}>cancel</button>
+	<button {{action 'inviteUser'}}>invite</button>
+</form>

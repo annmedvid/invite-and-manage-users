@@ -1,0 +1,39 @@
+{{#if isEditable}}
+	<td class='name name-team'>
+		{{input value=item.name key-up='updateName'}}
+		{{input value=item.description key-up='updateDescription'}}
+		<p class='users'>{{userQuantity}}</p>
+	</td>
+	<td class='enabled'>
+		{{team-is-enabled users item}}
+	</td>
+	<td class='color'>
+		{{#power-select
+  		options=options
+  		selected=selected
+  		onchange=(action 'updateColor')
+  		as |option|}}
+  			{{option}}
+		{{/power-select}}
+	</td>
+	<td class='buttons'>
+		<button {{action 'editItem' item}}>save</button>
+	</td>
+{{else}}
+	<td class='name name-team'>
+		{{#link-to 'teams.team' item}}
+			{{item.name}}
+		{{/link-to}}
+		<p class='description'>{{item.description}}</p>
+		<p class='users'>{{userQuantity}}</p>
+	</td>
+	<td class='enabled'>
+		{{team-is-enabled users item}}
+	</td>
+	<td class='color'>
+	</td>
+	<td class='buttons'>
+		<button {{action 'editItem' item}}>edit</button>
+		<button {{action 'deleteItem' item}} class='delete'>X</button>
+	</td>
+{{/if}}

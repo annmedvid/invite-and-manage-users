@@ -1,0 +1,52 @@
+{{#if isEditable}}
+	<td class='name'>
+		{{input value=item.name key-up='updateName'}}
+		{{input value=item.email key-up='updateEmail'}}
+	</td>
+	<td class='created'>
+		{{user-created item.created}}
+	</td>
+	<td class='enabled'>
+		{{#power-select
+  		options=optionsStatus
+  		selected=selectedStatus
+  		onchange=(action 'updateEnabled')
+  		as |option|}}
+  			{{option.title}}
+		{{/power-select}}
+	</td>
+	<td class='role'>
+		{{#power-select
+  		options=optionsRole
+  		selected=selectedRole
+  		onchange=(action 'updateRole')
+  		as |option|}}
+  			{{option}}
+		{{/power-select}}
+	</td>
+	<td class='buttons'>
+		<button {{action 'editItem' item}}>save</button>
+	</td>
+{{else}}
+	<td class='name'>
+		<span class='full-name'>{{item.name}}</span>
+		<span class='email'>{{item.email}}</span>
+	</td>
+	<td class='created'>
+		{{user-created item.created}}
+	</td>
+	<td class='enabled'>
+		{{#if item.enabled}}
+			yes
+		{{else}}
+			no
+		{{/if}}
+	</td>
+	<td class='role'>
+		{{item.role}}
+	</td>
+	<td class='buttons'>
+		<button {{action 'editItem' item}}>edit</button>
+		<button {{action 'deleteItem' item}} class='delete'>X</button>
+	</td>
+{{/if}}

@@ -1,0 +1,49 @@
+{{#if model.data}}
+	{{list-header
+		title=model.data.name
+		to='teams'
+		text='return to list'
+	}}
+
+	<section class='users'>
+		{{list-filter
+			param=model.data.name
+			isIn=true
+			title='In this team'
+			filter=(action 'filterByIn')
+			editUser=(action 'editUser')
+		}}
+
+		{{list-filter
+			param=model.data.name
+			isIn=false
+			title='In others'
+			filter=(action 'filterByOut')
+			editUser=(action 'editUser')
+		}}
+	</section>
+{{else}}
+	{{list-header
+		title=model.team.name
+		to='teams'
+		text='return to list'
+	}}
+
+	<section class='users'>
+		{{list-filter
+			param=model.team.name
+			isIn=true
+			title='In this team'
+			filter=(action 'filterByIn')
+			editUser=(action 'editUser')
+		}}
+
+		{{list-filter
+			param=model.team.name
+			isIn=false
+			title='In others'
+			filter=(action 'filterByOut')
+			editUser=(action 'editUser')
+		}}
+	</section>
+{{/if}}

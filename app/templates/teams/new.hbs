@@ -1,0 +1,28 @@
+{{list-header
+	title='new team'
+	to='teams'
+	text='x'
+}}
+
+<form class='content-form'>
+	<label>Name</label>
+	{{input
+		value=team.name
+		placeholder='Name'
+	}}
+	<label>Description</label>
+	{{input
+		value=team.description
+		placeholder='Description'
+	}}
+	<label>Color</label>
+	{{#power-select
+  	options=options
+  	selected=team.color
+  	onchange=(action 'updateColor')
+  	as |option|}}
+  		{{option}}
+	{{/power-select}}
+	<button {{action 'onCancel'}}>cancel</button>
+	<button {{action 'addTeam'}}>add team</button>
+</form>
